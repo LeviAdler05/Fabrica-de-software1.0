@@ -1,0 +1,103 @@
+CREATE DATABASE Loja_de_roupas ;
+USE Loja_de_roupas ;
+/* Lógico_11: */
+
+CREATE TABLE Loja_de_roupas (
+    Nome VARCHAR(20),
+    CNPJ VARCHAR(10),
+    Endereço VARCHAR(20),
+    Email VARCHAR(20),
+    Numero VARCHAR(10)
+);
+
+CREATE TABLE Funcionario (
+    Nome VARCHAR(20),
+    Sexo VARCHAR(10),
+    Endereço VARCHAR(20),
+    Email VARHCAR(20)
+);
+
+CREATE TABLE Matricula (
+    Numero_do_candidato VARCHAR(10),
+    Sexo VARCHAR(10),
+    Endereço VARCHAR(20),
+    Turno VARCHAR(10)
+);
+
+CREATE TABLE Candidato (
+    Nome VARCHAR(10),
+    E-mail VARCHAR(10),
+    Sexo VARCHAR(10),
+    Data_de_nascimento VARCHAR(10),
+    CPF VARCHAR(10),
+    Celular VARCHAR(10)
+);
+
+CREATE TABLE Cliente (
+    Nome VARCHAR(20),
+    Celular VARCHAR(10),
+    Email VARCHAR(20),
+    Sexo VARCHAR(10)
+);
+
+CREATE TABLE Roupa (
+    Tipo VARCHAR(10),
+    Cor VARCHAR(10),
+    Valor VARCHAR(100),
+    Tamanho VARCHAR(2)
+);
+
+INSERT INTO Loja_de_roupas (Nome, CNPJ, Endereço, Email, Numero)
+VALUES('RoupasWeb', '839243594', 'Rua Silvo Santos', 'lojaderoupasweb@gmail.com', '83977634854'),
+
+
+INSERT INTO Funcionario (Nome, Sexo, Endereço, Email)
+VALUES('Popó freitas', 'Masculino', 'AV. viltronita', 'popofreitas@gmail.com'),
+('Jadison Fernandes', 'Masculino', 'Rua. casteolo Branco', 'Jadisomfernandes@gmail.com'),
+('Rafael Soares', 'Masculino', 'AV. Casa Nova', 'rafaelsoares@gmail.com'),
+('Ricardo Nunes', 'Masculino', 'AV. Nossa Senhora', 'ricardonunes@gmail.com'),
+('Jesica Oliveira', 'Feminino', 'Rua. Nova Casa', 'Jesica Oliveiragmail.com'),
+
+INSERT INTO Matricula (Numero_do_contadato, Sexo, Endereço, Turno)
+VALUES('123456789', 'Masculino', 'Rua jose olavo', Manhã),
+('12564789', 'Masculino', 'Rua Casa Nova', Manhã),
+('34235439', 'Feminino', 'Rua Carro bacana', Noite),
+('29347556', 'Feminino', 'Rua Nossa Senhora', Manhã),
+('76293435', 'Masculino', 'AV. Senhora', Manhã)
+
+INSERT INTO Candidato (Nome, Email, Sexo, Data_de_nascimento, CPF, Celular)
+VALUES('Maria Clara', 'mariaclara@gmail.com', 'feminino', '02/7/1998'),
+('João Verde', 'jão343@gmail.com', 'Masculino', '10/7/1967'),
+('Olinda Silva', 'olindasilva@gmail.com', 'feminino', '04/2/2022'),
+('Pedro Rafael', 'pedrorafael@gmail.com', 'Masculino', '22/9/2000'),
+('Rafael Mario', 'rafaelmario@gmail.com', 'Masculino', '24/4/1999'),
+('Mario Silva', 'mariosilva@gmail.com', 'Masculino', '01/8/1997')
+
+INSERT INTO Cliente (Nome, Celular, Email, Sexo)
+VALUES('Paulo Oliveira', '83954781139', Masculino)
+
+INSERT INTO Roupa (Topo, Cor, Valor, Tamanho)
+VALUES('Longa', 'Verde', '60.99', 'M')
+
+select max(Quantidade) as 'tamanho com maior quantidade' from Roupa;
+
+select CPF, count(*) as
+Candidato
+from Endereco group by CPF;
+
+ALTER TABLE Cliente drop column Sexo;
+
+insert into Aluno ( Nome, Celular, Email, Sexo)
+values ('Paulo Oliveira', 83954781139, Masculino);
+
+select sum(Quantidade) AS Total from 
+Valor;
+
+select avg(Quantidade) as 'Quantidade média de roupas'
+from Roupa;
+
+delete from Cliente
+where nome = 'Airton Sena';
+
+select count(*) AS Quantidade from Funcionario;
+
